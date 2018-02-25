@@ -25,10 +25,10 @@ Each time when the game starts, the game will change the value of each crystal.
 <div id="random-points-box"></div>
 <div id="win-losses"></div>
 <div id="crystal-images">
-<button><img src="images/gem1.png" alt="gem 1" width="50px" height="50px"></button>
-<button><img src="images/gem2.png" alt="gem 1" width="50px" height="50px"></button>
-<button><img src="images/gem3.png" alt="gem 1" width="50px" height="50px"></button>
-<button><img src="images/gem4.png" alt="gem 1" width="50px" height="50px"></button>
+<button id="button1"><img src="images/gem1.png" alt="gem 1" width="50px" height="50px"></button>
+<button id="button2"><img src="images/gem2.png" alt="gem 2" width="50px" height="50px"></button>
+<button id="button3"><img src="images/gem3.png" alt="gem 3" width="50px" height="50px"></button>
+<button id="button4"><img src="images/gem4.png" alt="gem 4" width="50px" height="50px"></button>
 
 </div>
 <div id="total-score">Your total score is: </div>
@@ -41,21 +41,35 @@ Each time when the game starts, the game will change the value of each crystal.
 var wins = 0;
 var losses = 0;
 var totalScore = 0;
-var targetNumber;
+var targetScore;
+var buttonOne;
+var buttonTwo;
+var buttonThree;
+var buttonFour;
 
 function startGame () {
-    
+    totalScore = 0;
+    // random targetscore goal is generated between 19-120
+    targetScore = Math.floor(Math.random() * (120-19)+1)+19;
+    console.log("target score:" + targetScore);
+    // number on crystal image is randomly generator between 1-12 and each button set to a different random #
+    buttonOne = Math.floor(Math.random() * 12) + 1;
+    console.log(buttonOne)
+    buttonTwo = Math.floor(Math.random() * 12) + 1;
+    console.log(buttonTwo)
+    buttonThree = Math.floor(Math.random() * 12) + 1;
+    console.log(buttonThree)
+    buttonFour = Math.floor(Math.random() * 12) + 1;
+    console.log(buttonFour); 
+    $("#random-points-box").text(targetScore);
 }
-
-
-//create random target number
-//create random number for each image button
+startGame();
 
 // goal is to match score to random number
-// when you match the score to random number, win++
-// if you go over random number, loss ++
-// number on crystal is randomly generator between 1-12
-// random score goal is generated between 19-120
+//  if (totalScore === targetScore), win++
+// if (totalScore > targetScore)you go over random number, loss ++
+
+
 // each time you click on crystal, add that amount to your total score
 // hide amount crystal is worth but have it stated within the images
 

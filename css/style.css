@@ -64,3 +64,9 @@ h1 {
     height: 150px;
     margin-top: 10px;
 }
+
+
+#random-points-box {
+    color: white;
+    font-size: 50px;
+}

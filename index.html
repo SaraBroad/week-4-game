@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crystal Collector</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+<div id="main-container">
+
+<h1>Crystal Collector</h1>
+<div id="instructions">
+<p>You will be given a random number at the start of the game.</br></br>
+There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</br></br>
+You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</br></br>
+The value of each crystal is hidden from you until you click on it.</br></br>
+Each time when the game starts, the game will change the value of each crystal.
+</p>
+</div>
+
+<div id="random-points-box"></div>
+<div id="win-losses"></div>
+<div id="crystal-images">
+<button><img src="images/gem1.png" alt="gem 1" width="50px" height="50px"></button>
+<button><img src="images/gem2.png" alt="gem 1" width="50px" height="50px"></button>
+<button><img src="images/gem3.png" alt="gem 1" width="50px" height="50px"></button>
+<button><img src="images/gem4.png" alt="gem 1" width="50px" height="50px"></button>
+
+</div>
+<div id="total-score">Your total score is: </div>
+<div id="score-box"></div>
+
+</div>
+
+<script>
+
+var wins = 0;
+var losses = 0;
+var totalScore = 0;
+var targetNumber;
+
+function startGame () {
+    
+}
+
+
+//create random target number
+//create random number for each image button
+
+// goal is to match score to random number
+// when you match the score to random number, win++
+// if you go over random number, loss ++
+// number on crystal is randomly generator between 1-12
+// random score goal is generated between 19-120
+// each time you click on crystal, add that amount to your total score
+// hide amount crystal is worth but have it stated within the images
+
+
+</script>
+
+
+
+</body>
+</html>

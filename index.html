@@ -25,10 +25,10 @@ Each time when the game starts, the game will change the value of each crystal.
 <div id="random-points-box"></div>
 <div id="win-losses"></div>
 <div id="crystal-images">
-<button id="button1"><img src="images/gem1.png" alt="gem 1" width="50px" height="50px"></button>
-<button id="button2"><img src="images/gem2.png" alt="gem 2" width="50px" height="50px"></button>
-<button id="button3"><img src="images/gem3.png" alt="gem 3" width="50px" height="50px"></button>
-<button id="button4"><img src="images/gem4.png" alt="gem 4" width="50px" height="50px"></button>
+<button class="button" id="button1"><img src="images/gem1.png" alt="gem 1" width="50px" height="50px"></button>
+<button class="button" id="button2"><img src="images/gem2.png" alt="gem 2" width="50px" height="50px"></button>
+<button class="button" id="button3"><img src="images/gem3.png" alt="gem 3" width="50px" height="50px"></button>
+<button class="button" id="button4"><img src="images/gem4.png" alt="gem 4" width="50px" height="50px"></button>
 
 </div>
 <div id="total-score">Your total score is: </div>
@@ -37,6 +37,7 @@ Each time when the game starts, the game will change the value of each crystal.
 </div>
 
 <script>
+    $(document).ready(function() {
 
 var wins = 0;
 var losses = 0;
@@ -46,6 +47,7 @@ var buttonOne;
 var buttonTwo;
 var buttonThree;
 var buttonFour;
+var userClick;
 
 function startGame () {
     totalScore = 0;
@@ -54,16 +56,55 @@ function startGame () {
     console.log("target score:" + targetScore);
     // number on crystal image is randomly generator between 1-12 and each button set to a different random #
     buttonOne = Math.floor(Math.random() * 12) + 1;
-    console.log(buttonOne)
     buttonTwo = Math.floor(Math.random() * 12) + 1;
-    console.log(buttonTwo)
     buttonThree = Math.floor(Math.random() * 12) + 1;
-    console.log(buttonThree)
     buttonFour = Math.floor(Math.random() * 12) + 1;
-    console.log(buttonFour); 
     $("#random-points-box").text(targetScore);
 }
-startGame();
+
+   
+
+//function to record button clicks and add to total score
+$("#button1").click(function(){
+    // var userClick = $(this).attr("value");
+totalScore = totalScore + buttonOne;
+$("#score-box").text(totalScore);
+})
+
+$("#button2").click(function(){
+    // var userClick = $(this).attr("value");
+totalScore = totalScore + buttonTwo;
+$("#score-box").text(totalScore);
+})
+
+$("#button3").click(function(){
+    // var userClick = $(this).attr("value");
+totalScore = totalScore + buttonThree;
+$("#score-box").text(totalScore);
+})
+
+$("#button4").click(function(){
+    // var userClick = $(this).attr("value");
+totalScore = totalScore + buttonFour;
+$("#score-box").text(totalScore);
+})
+
+   startGame();
+ 
+function gameRules () {
+    if (totalScore === targetScore) {
+        alert("Winner");
+    } else if (totalScore > targetScore) {
+        alert("Loser");
+    }
+}
+
+isUserWinner();
+
+
+    });
+
+
 
 // goal is to match score to random number
 //  if (totalScore === targetScore), win++

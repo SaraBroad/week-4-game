@@ -53,7 +53,6 @@ function startGame () {
     totalScore = 0;
     // random targetscore goal is generated between 19-120
     targetScore = Math.floor(Math.random() * (120-19)+1)+19;
-    console.log("target score:" + targetScore);
     // number on crystal image is randomly generator between 1-12 and each button set to a different random #
     buttonOne = Math.floor(Math.random() * 12) + 1;
     buttonTwo = Math.floor(Math.random() * 12) + 1;
@@ -62,13 +61,13 @@ function startGame () {
     $("#random-points-box").text(targetScore);
 }
 
-   
+    startGame();
 
 //function to record button clicks and add to total score
-$("#button1").click(function(){
-    // var userClick = $(this).attr("value");
+$("#button1").click(function(){   
 totalScore = totalScore + buttonOne;
-$("#score-box").text(totalScore);
+$("#score-box").text(parseInt(totalScore));
+
 })
 
 $("#button2").click(function(){
@@ -89,20 +88,19 @@ totalScore = totalScore + buttonFour;
 $("#score-box").text(totalScore);
 })
 
-   startGame();
- 
-function gameRules () {
-    if (totalScore === targetScore) {
+  
+// function gameRules() {
+//     startGame();
+//    if 
+
+
+function isUserWinner() {
+    if (totalScore > 20) {
         alert("Winner");
-    } else if (totalScore > targetScore) {
-        alert("Loser");
     }
 }
 
-isUserWinner();
-
-
-    });
+});
 
 
 
@@ -110,9 +108,6 @@ isUserWinner();
 //  if (totalScore === targetScore), win++
 // if (totalScore > targetScore)you go over random number, loss ++
 
-
-// each time you click on crystal, add that amount to your total score
-// hide amount crystal is worth but have it stated within the images
 
 
 </script>

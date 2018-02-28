@@ -23,7 +23,10 @@ Each time when the game starts, the game will change the value of each crystal.
 </div>
 
 <div id="random-points-box"></div>
-<div id="win-losses"></div>
+<div id="win-losses">
+        <p id="winner">Wins: </p>
+        <p id="loser">Losses: </p>
+</div>
 <div id="crystal-images">
 <button class="button" id="button1"><img src="images/gem1.png" alt="gem 1" width="50px" height="50px"></button>
 <button class="button" id="button2"><img src="images/gem2.png" alt="gem 2" width="50px" height="50px"></button>
@@ -32,81 +35,14 @@ Each time when the game starts, the game will change the value of each crystal.
 
 </div>
 <div id="total-score">Your total score is: </div>
-<div id="score-box"></div>
+<div id="score-box">0
+  
+</div>
 
 </div>
 
-<script>
-    $(document).ready(function() {
+<script text="text/javascript" src="javascript/game.js"></script>
 
-var wins = 0;
-var losses = 0;
-var totalScore = 0;
-var targetScore;
-var buttonOne;
-var buttonTwo;
-var buttonThree;
-var buttonFour;
-var userClick;
-
-function startGame () {
-    totalScore = 0;
-    // random targetscore goal is generated between 19-120
-    targetScore = Math.floor(Math.random() * (120-19)+1)+19;
-    // number on crystal image is randomly generator between 1-12 and each button set to a different random #
-    buttonOne = Math.floor(Math.random() * 12) + 1;
-    buttonTwo = Math.floor(Math.random() * 12) + 1;
-    buttonThree = Math.floor(Math.random() * 12) + 1;
-    buttonFour = Math.floor(Math.random() * 12) + 1;
-    $("#random-points-box").text(targetScore);
-}
-
-    startGame();
-
-//function to record button clicks and add to total score
-$("#button1").click(function(){   
-totalScore = totalScore + buttonOne;
-$("#score-box").text(parseInt(totalScore));
-
-})
-
-$("#button2").click(function(){
-    // var userClick = $(this).attr("value");
-totalScore = totalScore + buttonTwo;
-$("#score-box").text(totalScore);
-})
-
-$("#button3").click(function(){
-    // var userClick = $(this).attr("value");
-totalScore = totalScore + buttonThree;
-$("#score-box").text(totalScore);
-})
-
-$("#button4").click(function(){
-    // var userClick = $(this).attr("value");
-totalScore = totalScore + buttonFour;
-$("#score-box").text(totalScore);
-})
-
-  
-// function gameRules() {
-//     startGame();
-//    if 
-
-
-function isUserWinner() {
-    if (totalScore > 20) {
-        alert("Winner");
-    }
-}
-
-});
-
-
-
-// goal is to match score to random number
-//  if (totalScore === targetScore), win++
-// if (totalScore > targetScore)you go over random number, loss ++
 
 
 
